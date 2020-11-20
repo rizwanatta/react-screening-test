@@ -1,21 +1,15 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import "./App.css";
+import AppLayout from "./AppLayout";
+import AppBar from "./AppBar";
 
-
-const MyButton = styled.button`
-background: transparent;
- border-radius: 3px;
- border: 2px solid palevioletred;
- color: palevioletred;
- margin: 0 1em;
- padding: 0.25em 1em;
-`;
 function App() {
-  return <div>
-    Hello World
-    <MyButton> TEST BUTTON IS HERE</MyButton>
-  </div>;
+  return (
+    <AppLayout>
+      <AppBar />
+    </AppLayout>
+  );
 }
 
 export default App;
