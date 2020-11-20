@@ -3,6 +3,7 @@ import "./App.css";
 import AppLayout from "./AppLayout";
 import AppBar from "./AppBar";
 import AppProvider, { AppContext } from "./AppProvider";
+import Articles from "../Articles";
 
 function App() {
   return (
@@ -10,12 +11,12 @@ function App() {
       <AppProvider>
         <AppBar />
         <AppContext.Consumer>
-          {({ page, setPage }) => (
-            <h1
-            // onClick={() => setPage("test the work")}
-            >
-              WELCOME TO ARTICLE SORTER , {page}
-            </h1>
+          {({ page, articles, setArticlesData, sortUsingDate }) => (
+            <Articles
+              articles={articles}
+              getArticles={setArticlesData}
+              sortUsingDate={sortUsingDate}
+            />
           )}
         </AppContext.Consumer>
       </AppProvider>
