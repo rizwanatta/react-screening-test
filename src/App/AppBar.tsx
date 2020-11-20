@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { textAlignCenter } from "../shared/styles";
 
 const Logo = styled.div`
   font-size: 1.5em;
@@ -8,13 +9,14 @@ const Logo = styled.div`
 
 const Bar = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto auto 180px;
+  grid-template-columns: 1fr 180px;
   grid-gap: 20px
   margin-bottom: 40px;
 `;
 
 const ControlButtonElem: any = styled.div`
   cursor: pointer;
+  ${textAlignCenter}
   ${(props: ControlButtonI) =>
     props.active &&
     css`
@@ -37,8 +39,6 @@ const AppBar = () => {
   return (
     <Bar>
       <Logo>ArticleSorter</Logo>
-      <div />
-      <div />
       <ControlButton active name="Signin" />
     </Bar>
   );
