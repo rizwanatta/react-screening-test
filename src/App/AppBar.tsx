@@ -8,7 +8,9 @@ const Logo = styled.div`
 
 const Bar = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto 100px 100px;
+  grid-template-columns: 1fr auto auto 180px;
+  grid-gap: 20px
+  margin-bottom: 40px;
 `;
 
 const ControlButtonElem: any = styled.div`
@@ -30,12 +32,13 @@ const ControlButton: any = (props: ControlButtonI) => {
     <ControlButtonElem active={props.active}>{props.name}</ControlButtonElem>
   );
 };
+
 const AppBar = () => {
   return (
     <Bar>
       <Logo>ArticleSorter</Logo>
       <div />
-      <ControlButton active name="About us" />
+      <div />
       <ControlButton active name="Signin" />
     </Bar>
   );

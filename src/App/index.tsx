@@ -1,13 +1,24 @@
 import React from "react";
-import styled from "styled-components";
 import "./App.css";
 import AppLayout from "./AppLayout";
 import AppBar from "./AppBar";
+import AppProvider, { AppContext } from "./AppProvider";
 
 function App() {
   return (
     <AppLayout>
-      <AppBar />
+      <AppProvider>
+        <AppBar />
+        <AppContext.Consumer>
+          {({ page, setPage }) => (
+            <h1
+            // onClick={() => setPage("test the work")}
+            >
+              WELCOME TO ARTICLE SORTER , {page}
+            </h1>
+          )}
+        </AppContext.Consumer>
+      </AppProvider>
     </AppLayout>
   );
 }
